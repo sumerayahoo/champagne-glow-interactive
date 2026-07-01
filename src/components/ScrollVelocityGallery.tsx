@@ -31,8 +31,8 @@ function Row({ images, baseVelocity = 3 }: Props) {
     <div dir="ltr" className="overflow-hidden m-0 whitespace-nowrap flex-nowrap">
       <motion.div className="flex gap-6 flex-nowrap whitespace-nowrap" style={{ x }}>
         {loop.map((src, i) => (
-          <div key={i} className="shrink-0 w-[280px] md:w-[360px] aspect-[3/4] overflow-hidden rounded-3xl border border-primary/20">
-            <img src={src} alt="Glow diary" loading="lazy" className="h-full w-full object-cover" />
+          <div key={i} className="shrink-0 w-[280px] md:w-[360px] aspect-[3/4] overflow-hidden rounded-3xl border border-primary/20 bg-card/40 grid place-items-center">
+            <img src={src} alt="Glow diary" loading="lazy" className="h-full w-full object-contain" />
           </div>
         ))}
       </motion.div>
