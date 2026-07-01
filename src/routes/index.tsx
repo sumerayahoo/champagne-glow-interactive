@@ -51,7 +51,7 @@ const services = [
   { key: "manicure-pedicure", img: service3, en: "Manicure & Pedicure", ar: "مانيكير وباديكير", enDesc: "Chrome, gel and hand-painted nail artistry with metallic finishes.", arDesc: "فن الأظافر بالكروم والجل والرسم اليدوي بلمسات معدنية." },
 ];
 
-const gallery = [team1, service1, service2, team2, service3, heroModel];
+const gallery = [diary1.url, diary2.url, diary3.url, diary4.url, diary5.url, diary6.url, diary7.url, diary8.url];
 
 function Index() {
   const { isAr, t } = useLang();
