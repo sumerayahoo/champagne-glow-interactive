@@ -17,18 +17,17 @@ export default function HeroCarousel({ alt = "Zahoor Al Banafssaj salon" }: { al
   const next = () => setI((v) => (v + 1) % SLIDES.length);
 
   return (
-    <div className="relative w-full h-[68vh] min-h-[480px] overflow-hidden">
+    <div className="relative w-full h-[92vh] min-h-[600px] overflow-hidden bg-background">
       {SLIDES.map((src, idx) => (
         <img
           key={src}
           src={src}
           alt={alt}
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+          className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-1000 ${
             idx === i ? "opacity-100" : "opacity-0"
           }`}
         />
       ))}
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-background/40 pointer-events-none" />
 
       <button
         type="button"
