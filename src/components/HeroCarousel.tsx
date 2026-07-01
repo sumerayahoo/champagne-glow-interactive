@@ -17,7 +17,7 @@ export default function HeroCarousel({ alt = "Zahoor Al Banafssaj salon" }: { al
   const next = () => setI((v) => (v + 1) % SLIDES.length);
 
   return (
-    <div className="relative w-full h-[92vh] min-h-[600px] overflow-hidden bg-background">
+    <div className="relative w-full h-[45vh] sm:h-[65vh] md:h-[85vh] lg:h-[92vh] min-h-[300px] overflow-hidden bg-background">
       {SLIDES.map((src, idx) => (
         <img
           key={src}
