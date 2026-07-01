@@ -99,69 +99,8 @@ function Index() {
         <HeroCarousel alt={t("Zahoor Al Banafssaj salon", "صالون زهور البنفسج")} />
       </section>
 
-      {/* INTRO + Girl photo with follow button */}
-      <section className="relative z-10 mx-auto max-w-7xl px-6 pt-20 pb-24">
-        <div className="grid lg:grid-cols-12 gap-10 items-center">
-          <div className="lg:col-span-7 space-y-8">
-            <p className="text-xs uppercase tracking-[0.3em] text-primary shimmer">— {t("Zahoor Al Banafssaj · Maison de Beauté", "زهور البنفسج · صالون الجمال")}</p>
-            <h1 className="font-display text-5xl md:text-7xl leading-[0.95]">
-              {isAr ? (
-                <>قوة <em className="italic text-gradient-rose">ناعمة،</em><br/>مذهّبة بضوء<br/><span className="text-gradient-rose">الذهب الوردي</span>.</>
-              ) : (
-                <>Soft <em className="italic text-gradient-rose">power,</em><br/>gilded in <span className="text-gradient-rose">rose</span><br/>gold light.</>
-              )}
-            </h1>
-            <p className="max-w-md text-base text-muted-foreground leading-relaxed">
-              {t(
-                "Zahoor Al Banafssaj is a dark, intimate atelier where hair, makeup and nail artistry are crafted with the patience of a couture house — and the glow of champagne.",
-                "زهور البنفسج صالون هادئ وحميم تُصنع فيه فنون الشعر والمكياج والأظافر بصبر دار أزياء راقية وبريق الشمبانيا."
-              )}
-            </p>
-            <div className="flex flex-wrap items-center gap-4">
-              <a href="#services" className="group inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-primary to-accent px-7 py-3.5 text-sm font-medium text-primary-foreground shadow-[var(--shadow-rose)] hover:scale-[1.02] transition-transform">
-                {t("Discover the rituals", "اكتشفي الجلسات")}
-                <span className="transition-transform group-hover:translate-x-1">{isAr ? "←" : "→"}</span>
-              </a>
-              <a href="tel:+96877415629" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary">
-                <span className="grid h-10 w-10 place-items-center rounded-full border border-primary/40">☎</span>
-                +968 77415629
-              </a>
-            </div>
-
-            <div className="grid grid-cols-3 gap-6 pt-8 border-t border-primary/15 max-w-md">
-              {[
-                { n: "12+", en: "Years", ar: "سنوات" },
-                { n: "80", en: "Brides /yr", ar: "عروسة/سنة" },
-                { n: "7", en: "Artisans", ar: "فنانات" },
-              ].map((s) => (
-                <div key={s.en}>
-                  <div className="font-display text-3xl text-gradient-rose">{s.n}</div>
-                  <div className="text-xs uppercase tracking-widest text-muted-foreground mt-1">{isAr ? s.ar : s.en}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="lg:col-span-5 relative">
-            <div className="absolute -inset-4 rounded-[3rem] bg-gradient-to-br from-primary/30 via-transparent to-accent/20 blur-2xl" />
-            <div className="relative overflow-hidden rounded-[3rem] border border-primary/30 shadow-[var(--shadow-rose)]">
-              <img src={heroModel} alt="Beauty model with rose gold makeup" width={800} height={1024} className="w-full h-[560px] object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
-              <InstagramTrigger className="absolute bottom-6 left-6 right-6 glass-card rounded-2xl p-4 flex items-center justify-between hover:border-primary/60 transition-colors text-start">
-                <span className="block">
-                  <span className="block text-xs uppercase tracking-widest text-primary">{t("Follow on Instagram", "تابعينا على إنستغرام")}</span>
-                  <span className="block font-display text-lg">@zahoor_al_banafssaj_beauty</span>
-                </span>
-                <span className="grid h-12 w-12 place-items-center rounded-full bg-primary text-primary-foreground">↗</span>
-              </InstagramTrigger>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
       {/* SERVICES */}
-      <section id="services" className="relative z-10 mx-auto max-w-7xl px-6 py-24">
+      <section id="services" className="relative z-10 mx-auto max-w-7xl px-6 pt-24 pb-24">
         <div className="flex flex-wrap items-end justify-between gap-6 mb-14">
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-primary mb-3">— {t("Our rituals", "جلساتنا")}</p>
@@ -189,13 +128,35 @@ function Index() {
         </div>
       </section>
 
+      {/* GLIMPSES OF THE ATELIER — link to /works */}
+      <section id="work" className="relative z-10 mx-auto max-w-7xl px-6 py-16">
+        <div className="glass-card rounded-[2.5rem] p-10 md:p-14 text-center space-y-6">
+          <p className="text-xs uppercase tracking-[0.3em] text-primary">— {t("Glimpses of the atelier", "لمحات من الصالون")}</p>
+          <h2 className="font-display text-4xl md:text-5xl max-w-2xl mx-auto">
+            {isAr ? (<>لمحات من <em className="italic text-gradient-rose">صالوننا</em>.</>) : (<>Glimpses from the <em className="italic text-gradient-rose">atelier</em>.</>)}
+          </h2>
+          <p className="text-muted-foreground max-w-xl mx-auto">
+            {t(
+              "A curated archive of brides, henna, hair and nail work.",
+              "أرشيف منتقى لأعمال العرائس والحناء والشعر والأظافر."
+            )}
+          </p>
+          <Link
+            to="/works"
+            className="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-primary to-accent px-7 py-3.5 text-sm font-medium text-primary-foreground shadow-[var(--shadow-rose)] hover:scale-[1.02] transition-transform"
+          >
+            {t("Our Works", "أعمالنا")} <span>{isAr ? "←" : "→"}</span>
+          </Link>
+        </div>
+      </section>
+
       {/* OFFERS */}
       <section id="offers" className="relative z-10 mx-auto max-w-7xl px-6 py-16">
         <div className="glass-card rounded-[2.5rem] p-10 md:p-14 grid md:grid-cols-12 gap-10 items-center">
           <div className="md:col-span-7 space-y-5">
-            <p className="text-xs uppercase tracking-[0.3em] text-primary shimmer">— {t("Exclusive offers", "عروض حصرية")}</p>
+            <p className="text-xs uppercase tracking-[0.3em] text-primary shimmer">— {t("Offers", "العروض")}</p>
             <h2 className="font-display text-4xl md:text-5xl">
-              {isAr ? (<>عروض هذا الشهر <em className="italic text-gradient-rose">المختارة بعناية</em>.</>) : (<>This month's <em className="italic text-gradient-rose">curated</em> offers.</>)}
+              {isAr ? (<>عروضنا <em className="italic text-gradient-rose">المختارة بعناية</em>.</>) : (<>Our <em className="italic text-gradient-rose">curated</em> offers.</>)}
             </h2>
             <p className="text-muted-foreground max-w-md">
               {t(
@@ -209,11 +170,12 @@ function Index() {
           </div>
           <div className="md:col-span-5">
             <OffersTrigger className="block w-full overflow-hidden rounded-[2rem] border border-primary/30 shadow-[var(--shadow-rose)] hover:scale-[1.02] transition-transform">
-              <img src={offersPreview.url} alt={t("June exclusive offers", "عروض شهر يونيو الحصرية")} className="w-full h-auto block" />
+              <img src={offersPreview.url} alt={t("Exclusive offers", "العروض الحصرية")} className="w-full h-auto block" />
             </OffersTrigger>
           </div>
         </div>
       </section>
+
 
 
       {/* TEAM */}
