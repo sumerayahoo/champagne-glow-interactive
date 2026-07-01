@@ -9,10 +9,16 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as WorksRouteImport } from './routes/works'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ArtistSlugRouteImport } from './routes/artist.$slug'
 
+const WorksRoute = WorksRouteImport.update({
+  id: '/works',
+  path: '/works',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
@@ -32,35 +38,46 @@ const ArtistSlugRoute = ArtistSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/services': typeof ServicesRoute
+  '/works': typeof WorksRoute
   '/artist/$slug': typeof ArtistSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/services': typeof ServicesRoute
+  '/works': typeof WorksRoute
   '/artist/$slug': typeof ArtistSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/services': typeof ServicesRoute
+  '/works': typeof WorksRoute
   '/artist/$slug': typeof ArtistSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/services' | '/artist/$slug'
+  fullPaths: '/' | '/services' | '/works' | '/artist/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/services' | '/artist/$slug'
-  id: '__root__' | '/' | '/services' | '/artist/$slug'
+  to: '/' | '/services' | '/works' | '/artist/$slug'
+  id: '__root__' | '/' | '/services' | '/works' | '/artist/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ServicesRoute: typeof ServicesRoute
+  WorksRoute: typeof WorksRoute
   ArtistSlugRoute: typeof ArtistSlugRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/works': {
+      id: '/works'
+      path: '/works'
+      fullPath: '/works'
+      preLoaderRoute: typeof WorksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services': {
       id: '/services'
       path: '/services'
@@ -88,6 +105,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ServicesRoute: ServicesRoute,
+  WorksRoute: WorksRoute,
   ArtistSlugRoute: ArtistSlugRoute,
 }
 export const routeTree = rootRouteImport
