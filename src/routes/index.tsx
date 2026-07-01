@@ -245,19 +245,7 @@ function Index() {
         </div>
       </section>
 
-      {/* OUR WORK */}
-      <section id="work" className="relative z-10 mx-auto max-w-7xl px-6 py-24">
-        <div className="flex flex-wrap items-end justify-between gap-6 mb-10">
-          <div>
-            <p className="text-xs uppercase tracking-[0.3em] text-primary mb-3">— {t("View our work", "شاهدي أعمالنا")}</p>
-            <h2 className="font-display text-5xl md:text-6xl max-w-2xl">
-              {isAr ? (<>لمحات من <em className="italic text-gradient-rose">صالوننا</em>.</>) : (<>Glimpses from the <em className="italic text-gradient-rose">atelier</em>.</>)}
-            </h2>
-          </div>
-          <p className="max-w-sm text-muted-foreground">{t("A curated archive of brides, henna, hair and nail work. Tap any image to view it in full.", "أرشيف منتقى لأعمال العرائس والحناء والشعر والأظافر. اضغطي على أي صورة لعرضها بالكامل.")}</p>
-        </div>
-        <WorkGallery />
-      </section>
+
 
 
       {/* WORDS ON VELVET */}
