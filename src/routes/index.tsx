@@ -22,7 +22,7 @@ import diary7 from "@/assets/diary/glimpses7.jpg.asset.json";
 import diary8 from "@/assets/diary/glimpses8.jpg.asset.json";
 import ScrollMirror from "@/components/ScrollMirror";
 import HeroCarousel from "@/components/HeroCarousel";
-import WorkGallery from "@/components/WorkGallery";
+
 import { ARTISTS } from "@/lib/artists";
 import { useLang, LangToggle } from "@/lib/lang";
 import { InstagramTrigger } from "@/components/InstagramModal";
