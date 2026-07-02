@@ -1,7 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { lazy, Suspense } from "react";
 
-import service1 from "@/assets/service-1.jpg";
+import hennaAsset from "@/assets/henna.jpg.asset.json";
+const service1 = hennaAsset.url;
 import service2 from "@/assets/service-2.jpg";
 import service3 from "@/assets/service-3.jpg";
 import about from "@/assets/about.jpg";
