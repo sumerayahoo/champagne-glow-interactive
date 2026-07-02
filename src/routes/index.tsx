@@ -149,7 +149,7 @@ function Index() {
           </div>
 
 
-          <div className="overflow-hidden rounded-2xl border border-primary/20 bg-black">
+          <div className="mx-auto w-full max-w-xs sm:max-w-sm overflow-hidden rounded-2xl border border-primary/20 bg-black">
             <img src={glimpseCollage.url} alt={t("Atelier collage", "لوحة الصالون")} className="w-full h-auto block" loading="lazy" />
           </div>
 
