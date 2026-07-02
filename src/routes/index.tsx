@@ -22,6 +22,10 @@ import diary7 from "@/assets/diary/glimpses7.jpg.asset.json";
 import diary8 from "@/assets/diary/glimpses8.jpg.asset.json";
 import ScrollMirror from "@/components/ScrollMirror";
 import HeroCarousel from "@/components/HeroCarousel";
+import glimpseVideo1 from "@/assets/glimpses/video1.mp4.asset.json";
+import glimpseVideo2 from "@/assets/glimpses/video2.mp4.asset.json";
+import glimpseVideo3 from "@/assets/glimpses/video3.mp4.asset.json";
+import glimpseCollage from "@/assets/glimpses/collage.jpg.asset.json";
 
 import { ARTISTS } from "@/lib/artists";
 import { useLang, LangToggle } from "@/lib/lang";
@@ -132,23 +136,48 @@ function Index() {
 
       {/* GLIMPSES OF THE ATELIER — link to /works */}
       <section id="work" className="relative z-10 mx-auto max-w-7xl px-6 py-16">
-        <div className="glass-card rounded-[2.5rem] p-10 md:p-14 text-center space-y-6">
-          <p className="text-xs uppercase tracking-[0.3em] text-primary">— {t("Glimpses of the atelier", "لمحات من الصالون")}</p>
-          <h2 className="font-display text-4xl md:text-5xl max-w-2xl mx-auto">
-            {isAr ? (<>لمحات من <em className="italic text-gradient-rose">صالوننا</em>.</>) : (<>Glimpses from the <em className="italic text-gradient-rose">atelier</em>.</>)}
-          </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto">
-            {t(
-              "A curated archive of brides, henna, hair and nail work.",
-              "أرشيف منتقى لأعمال العرائس والحناء والشعر والأظافر."
-            )}
-          </p>
-          <Link
-            to="/works"
-            className="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-primary to-accent px-7 py-3.5 text-sm font-medium text-primary-foreground shadow-[var(--shadow-rose)] hover:scale-[1.02] transition-transform"
-          >
-            {t("Our Works", "أعمالنا")} <span>{isAr ? "←" : "→"}</span>
-          </Link>
+        <div className="glass-card rounded-[2.5rem] p-6 sm:p-10 md:p-14 space-y-8">
+          <div className="text-center space-y-4">
+            <p className="text-xs uppercase tracking-[0.3em] text-primary">— {t("Glimpses of the atelier", "لمحات من الصالون")}</p>
+            <h2 className="font-display text-4xl md:text-5xl max-w-2xl mx-auto">
+              {isAr ? (<>لمحات من <em className="italic text-gradient-rose">صالوننا</em>.</>) : (<>Glimpses from the <em className="italic text-gradient-rose">atelier</em>.</>)}
+            </h2>
+            <p className="text-muted-foreground max-w-xl mx-auto">
+              {t(
+                "A curated archive of brides, henna, hair and nail work.",
+                "أرشيف منتقى لأعمال العرائس والحناء والشعر والأظافر."
+              )}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {[glimpseVideo1.url, glimpseVideo2.url, glimpseVideo3.url].map((src, i) => (
+              <div key={i} className="overflow-hidden rounded-2xl border border-primary/20 bg-black aspect-[9/16]">
+                <video
+                  src={src}
+                  className="w-full h-full object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                />
+              </div>
+            ))}
+          </div>
+
+          <div className="overflow-hidden rounded-2xl border border-primary/20 bg-black">
+            <img src={glimpseCollage.url} alt={t("Atelier collage", "لوحة الصالون")} className="w-full h-auto block" loading="lazy" />
+          </div>
+
+          <div className="text-center">
+            <Link
+              to="/works"
+              className="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-primary to-accent px-7 py-3.5 text-sm font-medium text-primary-foreground shadow-[var(--shadow-rose)] hover:scale-[1.02] transition-transform"
+            >
+              {t("Our Works", "أعمالنا")} <span>{isAr ? "←" : "→"}</span>
+            </Link>
+          </div>
         </div>
       </section>
 
