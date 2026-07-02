@@ -4,6 +4,9 @@ import WorkGallery from "@/components/WorkGallery";
 import logoAsset from "@/assets/zahoor-logo.png.asset.json";
 import { useLang, LangToggle } from "@/lib/lang";
 import { InstagramTrigger } from "@/components/InstagramModal";
+import glimpseVideo1 from "@/assets/glimpses/video1.mp4.asset.json";
+import glimpseVideo2 from "@/assets/glimpses/video2.mp4.asset.json";
+import glimpseVideo3 from "@/assets/glimpses/video3.mp4.asset.json";
 
 export const Route = createFileRoute("/works")({
   head: () => ({
