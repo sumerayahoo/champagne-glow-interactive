@@ -4,6 +4,9 @@ import WorkGallery from "@/components/WorkGallery";
 import logoAsset from "@/assets/zahoor-logo.png.asset.json";
 import { useLang, LangToggle } from "@/lib/lang";
 import { InstagramTrigger } from "@/components/InstagramModal";
+import glimpseVideo1 from "@/assets/glimpses/video1.mp4.asset.json";
+import glimpseVideo2 from "@/assets/glimpses/video2.mp4.asset.json";
+import glimpseVideo3 from "@/assets/glimpses/video3.mp4.asset.json";
 
 export const Route = createFileRoute("/works")({
   head: () => ({
@@ -57,20 +60,37 @@ function WorksPage() {
 
       </header>
 
-      <main className="relative z-10 mx-auto max-w-7xl px-6 pb-24">
-        <div className="text-center space-y-4 mb-10">
+      <main className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 pb-16 sm:pb-24">
+        <div className="text-center space-y-3 sm:space-y-4 mb-8 sm:mb-10">
           <p className="text-xs uppercase tracking-[0.3em] text-primary">
             — {t("Our Works", "أعمالنا")}
           </p>
-          <h1 className="font-display text-5xl md:text-6xl">
+          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl">
             {t("The portfolio.", "معرض الأعمال.")}
           </h1>
-          <p className="text-muted-foreground max-w-xl mx-auto">
+          <p className="text-sm sm:text-base text-muted-foreground max-w-xl mx-auto px-2">
             {t(
               "A curated archive of brides, henna, hair and nail work. Tap any image to view it in full.",
               "أرشيف منتقى لأعمال العرائس والحناء والشعر والأظافر. اضغطي على أي صورة لعرضها بالكامل."
             )}
           </p>
+        </div>
+
+        {/* VIDEO GLIMPSES */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-8 sm:mb-10">
+          {[glimpseVideo1.url, glimpseVideo2.url, glimpseVideo3.url].map((src, i) => (
+            <div key={i} className="overflow-hidden rounded-2xl border border-primary/20 bg-black aspect-[9/16]">
+              <video
+                src={src}
+                className="w-full h-full object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+              />
+            </div>
+          ))}
         </div>
 
         <WorkGallery />
