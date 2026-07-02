@@ -103,11 +103,11 @@ function Index() {
       </section>
 
       {/* SERVICES */}
-      <section id="services" className="relative z-10 mx-auto max-w-7xl px-6 pt-24 pb-24">
+      <section id="services" className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 pt-16 sm:pt-24 pb-16 sm:pb-24">
         <div className="flex flex-wrap items-end justify-between gap-6 mb-14">
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-primary mb-3">— {t("Our rituals", "جلساتنا")}</p>
-            <h2 className="font-display text-5xl md:text-6xl max-w-xl">{t("A quiet ceremony for every gesture.", "طقس هادئ لكل لمسة.")}</h2>
+            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl max-w-xl">{t("A quiet ceremony for every gesture.", "طقس هادئ لكل لمسة.")}</h2>
           </div>
           <p className="max-w-sm text-muted-foreground">{t("Each service is a slow, intentional ritual — never rushed, always tailored to your features and mood.", "كل خدمة طقس بطيء ومتأنٍّ — بلا استعجال، ومصمم لملامحك ومزاجك.")}</p>
         </div>
@@ -132,11 +132,11 @@ function Index() {
       </section>
 
       {/* GLIMPSES OF THE ATELIER — link to /works */}
-      <section id="work" className="relative z-10 mx-auto max-w-7xl px-6 py-16">
+      <section id="work" className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-16">
         <div className="glass-card rounded-[2.5rem] p-6 sm:p-10 md:p-14 space-y-8">
           <div className="text-center space-y-4">
             <p className="text-xs uppercase tracking-[0.3em] text-primary">— {t("Glimpses of the atelier", "لمحات من الصالون")}</p>
-            <h2 className="font-display text-4xl md:text-5xl max-w-2xl mx-auto">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl max-w-2xl mx-auto">
               {isAr ? (<>لمحات من <em className="italic text-gradient-rose">صالوننا</em>.</>) : (<>Glimpses from the <em className="italic text-gradient-rose">atelier</em>.</>)}
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
@@ -164,11 +164,11 @@ function Index() {
       </section>
 
       {/* OFFERS */}
-      <section id="offers" className="relative z-10 mx-auto max-w-7xl px-6 py-16">
+      <section id="offers" className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-16">
         <div className="glass-card rounded-[2.5rem] p-10 md:p-14 grid md:grid-cols-12 gap-10 items-center">
           <div className="md:col-span-7 space-y-5">
             <p className="text-xs uppercase tracking-[0.3em] text-primary shimmer">— {t("Offers", "العروض")}</p>
-            <h2 className="font-display text-4xl md:text-5xl">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl">
               {isAr ? (<>عروضنا <em className="italic text-gradient-rose">المختارة بعناية</em>.</>) : (<>Our <em className="italic text-gradient-rose">curated</em> offers.</>)}
             </h2>
             <p className="text-muted-foreground max-w-md">
@@ -192,12 +192,12 @@ function Index() {
 
 
       {/* TEAM */}
-      <section id="atelier" className="relative z-10 mx-auto max-w-7xl px-6 py-24">
+      <section id="atelier" className="relative z-10 mx-auto max-w-7xl px-4 sm:px-4 sm:px-6 py-12 sm:py-16 sm:py-24">
         <div className="glass-card rounded-[2.5rem] p-10 md:p-16">
           <div className="grid lg:grid-cols-12 gap-10 items-end mb-12">
             <div className="lg:col-span-7 space-y-5">
               <p className="text-xs uppercase tracking-[0.3em] text-primary">— {t("Our artisans", "فنانات الصالون")}</p>
-              <h2 className="font-display text-5xl md:text-6xl">{t("Hands that shape the light.", "أيادٍ تشكّل الضوء.")}</h2>
+              <h2 className="font-display text-4xl sm:text-5xl md:text-6xl">{t("Hands that shape the light.", "أيادٍ تشكّل الضوء.")}</h2>
             </div>
             <p className="lg:col-span-5 text-muted-foreground">{t("Seven artisans, each with a signature speciality. Tap a face to see their portfolio and leave a review.", "سبع فنانات لكل واحدة تخصصها المميز. اضغطي على الصورة لمشاهدة أعمالها وكتابة تقييمك.")}</p>
           </div>
@@ -228,7 +228,7 @@ function Index() {
       <section id="gallery" className="relative z-10 py-24">
         <div className="mx-auto max-w-7xl px-6 mb-12">
           <p className="text-xs uppercase tracking-[0.3em] text-primary mb-3">— {t("Carnet", "اليوميات")}</p>
-          <h2 className="font-display text-5xl md:text-6xl">
+          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl">
             {isAr ? (<>يوميات من <em className="italic text-gradient-rose">الإشراق</em>.</>) : (<>A diary of <em className="italic text-gradient-rose">glow</em>.</>)}
           </h2>
           <p className="mt-3 text-sm text-muted-foreground">{t("Scroll to feel the velocity — the diary drifts with your motion.", "مرّري لتشعري بالحركة — تتحرك الصور مع تمريرك.")}</p>
@@ -237,7 +237,7 @@ function Index() {
       </section>
 
       {/* ABOUT */}
-      <section className="relative z-10 mx-auto max-w-7xl px-6 py-24">
+      <section className="relative z-10 mx-auto max-w-7xl px-4 sm:px-4 sm:px-6 py-12 sm:py-16 sm:py-24">
         <div className="grid lg:grid-cols-12 gap-10 items-center">
           <div className="lg:col-span-5 relative">
             <div className="absolute -inset-4 rounded-[3rem] bg-gradient-to-tr from-accent/30 to-primary/20 blur-2xl" />
@@ -245,7 +245,7 @@ function Index() {
           </div>
           <div className="lg:col-span-7 space-y-6">
             <p className="text-xs uppercase tracking-[0.3em] text-primary">— {t("Our maison", "صالوننا")}</p>
-            <h2 className="font-display text-5xl md:text-6xl">
+            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl">
               {isAr ? (<>صالون منحوت من <em className="italic text-gradient-rose">منتصف الليل</em> والشمبانيا.</>) : (<>An atelier carved out of <em className="italic text-gradient-rose">midnight</em> and champagne.</>)}
             </h2>
             <p className="text-muted-foreground leading-relaxed max-w-xl">
@@ -262,7 +262,7 @@ function Index() {
 
 
       {/* WORDS ON VELVET */}
-      <section className="relative z-10 mx-auto max-w-7xl px-6 py-24">
+      <section className="relative z-10 mx-auto max-w-7xl px-4 sm:px-4 sm:px-6 py-12 sm:py-16 sm:py-24">
         <div className="glass-card rounded-[2.5rem] p-10 md:p-16 space-y-6">
           <p className="text-xs uppercase tracking-[0.3em] text-primary text-center">— {t("Words on velvet", "كلمات على المخمل")}</p>
           <div className="max-w-3xl mx-auto space-y-5 text-muted-foreground leading-relaxed text-base md:text-lg">
