@@ -150,21 +150,6 @@ function Index() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {[glimpseVideo1.url, glimpseVideo2.url, glimpseVideo3.url].map((src, i) => (
-              <div key={i} className="overflow-hidden rounded-2xl border border-primary/20 bg-black aspect-[9/16]">
-                <video
-                  src={src}
-                  className="w-full h-full object-cover"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="metadata"
-                />
-              </div>
-            ))}
-          </div>
 
           <div className="overflow-hidden rounded-2xl border border-primary/20 bg-black">
             <img src={glimpseCollage.url} alt={t("Atelier collage", "لوحة الصالون")} className="w-full h-auto block" loading="lazy" />
