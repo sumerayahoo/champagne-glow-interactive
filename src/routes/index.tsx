@@ -22,9 +22,6 @@ import diary7 from "@/assets/diary/glimpses7.jpg.asset.json";
 import diary8 from "@/assets/diary/glimpses8.jpg.asset.json";
 import ScrollMirror from "@/components/ScrollMirror";
 import HeroCarousel from "@/components/HeroCarousel";
-import glimpseVideo1 from "@/assets/glimpses/video1.mp4.asset.json";
-import glimpseVideo2 from "@/assets/glimpses/video2.mp4.asset.json";
-import glimpseVideo3 from "@/assets/glimpses/video3.mp4.asset.json";
 import glimpseCollage from "@/assets/glimpses/collage.jpg.asset.json";
 
 import { ARTISTS } from "@/lib/artists";
