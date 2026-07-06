@@ -170,28 +170,29 @@ function Index() {
 
       {/* OFFERS */}
       <section id="offers" className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-16">
-        <div className="glass-card rounded-[2.5rem] p-10 md:p-14 grid md:grid-cols-12 gap-10 items-center">
-          <div className="md:col-span-7 space-y-5">
-            <p className="text-xs uppercase tracking-[0.3em] text-primary shimmer">— {t("Offers", "العروض")}</p>
-            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl">
+        <div className="glass-card rounded-[2rem] sm:rounded-[2.5rem] p-5 sm:p-10 md:p-14 grid grid-cols-12 gap-4 sm:gap-10 items-center">
+          <div className="col-span-7 space-y-2 sm:space-y-5">
+            <p className="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-primary shimmer">— {t("Offers", "العروض")}</p>
+            <h2 className="font-display text-lg sm:text-4xl md:text-5xl leading-tight">
               {isAr ? (<>عروضنا <em className="italic text-gradient-rose">المختارة بعناية</em>.</>) : (<>Our <em className="italic text-gradient-rose">curated</em> offers.</>)}
             </h2>
-            <p className="text-muted-foreground max-w-md">
+            <p className="hidden sm:block text-muted-foreground max-w-md">
               {t(
                 "Limited-time packages on facials, nails, hair treatments and bridal bundles. Tap to view the full offer card.",
                 "باقات لفترة محدودة على الفيشل والأظافر وعلاجات الشعر وحزم العرائس. اضغطي لعرض بطاقة العروض كاملة."
               )}
             </p>
-            <OffersTrigger className="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-primary to-accent px-7 py-3.5 text-sm font-medium text-primary-foreground shadow-[var(--shadow-rose)] hover:scale-[1.02] transition-transform">
-              {t("View our offers", "عرض عروضنا")} <span>{isAr ? "←" : "→"}</span>
+            <OffersTrigger className="inline-flex items-center gap-2 sm:gap-3 rounded-full bg-gradient-to-r from-primary to-accent px-4 sm:px-7 py-2 sm:py-3.5 text-[11px] sm:text-sm font-medium text-primary-foreground shadow-[var(--shadow-rose)] hover:scale-[1.02] transition-transform">
+              {t("View offers", "عرض عروضنا")} <span>{isAr ? "←" : "→"}</span>
             </OffersTrigger>
           </div>
-          <div className="md:col-span-5">
-            <OffersTrigger className="block w-full overflow-hidden rounded-[2rem] border border-primary/30 shadow-[var(--shadow-rose)] hover:scale-[1.02] transition-transform">
+          <div className="col-span-5">
+            <OffersTrigger className="block w-full overflow-hidden rounded-2xl sm:rounded-[2rem] border border-primary/30 shadow-[var(--shadow-rose)] hover:scale-[1.02] transition-transform">
               <img src={offersPreview.url} alt={t("Exclusive offers", "العروض الحصرية")} className="w-full h-auto block" />
             </OffersTrigger>
           </div>
         </div>
+
       </section>
 
 
