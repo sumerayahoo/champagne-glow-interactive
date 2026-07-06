@@ -29,9 +29,9 @@ function Row({ images, baseVelocity = 3 }: Props) {
 
   return (
     <div dir="ltr" className="overflow-hidden m-0 whitespace-nowrap flex-nowrap">
-      <motion.div className="flex gap-6 flex-nowrap whitespace-nowrap" style={{ x }}>
+      <motion.div className="flex gap-3 sm:gap-6 flex-nowrap whitespace-nowrap" style={{ x }}>
         {loop.map((src, i) => (
-          <div key={i} className="shrink-0 w-[280px] md:w-[360px] aspect-[3/4] overflow-hidden rounded-3xl border border-primary/20 bg-card/40 grid place-items-center">
+          <div key={i} className="shrink-0 w-[160px] sm:w-[280px] md:w-[360px] aspect-[3/4] overflow-hidden rounded-2xl sm:rounded-3xl border border-primary/20 bg-card/40 grid place-items-center">
             <img src={src} alt="Glow diary" loading="lazy" className="h-full w-full object-contain" />
           </div>
         ))}
@@ -43,9 +43,10 @@ function Row({ images, baseVelocity = 3 }: Props) {
 export default function ScrollVelocityGallery({ images }: { images: string[] }) {
   const half = Math.ceil(images.length / 2);
   return (
-    <div className="space-y-6">
-      <Row images={images.slice(0, half)} baseVelocity={3} />
-      <Row images={images.slice(half).concat(images.slice(0, half))} baseVelocity={-3} />
+    <div className="space-y-3 sm:space-y-6">
+      <Row images={images.slice(0, half)} baseVelocity={5} />
+      <Row images={images.slice(half).concat(images.slice(0, half))} baseVelocity={-5} />
     </div>
   );
 }
+
