@@ -246,18 +246,18 @@ function Index() {
 
 
       {/* ABOUT */}
-      <section className="relative z-10 mx-auto max-w-7xl px-4 sm:px-4 sm:px-6 py-12 sm:py-16 sm:py-24">
-        <div className="grid lg:grid-cols-12 gap-10 items-center">
-          <div className="lg:col-span-5 relative">
-            <div className="absolute -inset-4 rounded-[3rem] bg-gradient-to-tr from-accent/30 to-primary/20 blur-2xl" />
-            <img src={maisonAsset.url} alt="Zahoor Al Banafssaj atelier interior" loading="lazy" width={700} height={800} className="relative w-full rounded-[3rem] border border-primary/30 shadow-[var(--shadow-rose)] object-cover" />
+      <section className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-24">
+        <div className="grid grid-cols-12 gap-4 sm:gap-10 items-center">
+          <div className="col-span-5 relative">
+            <div className="absolute -inset-2 sm:-inset-4 rounded-[2rem] sm:rounded-[3rem] bg-gradient-to-tr from-accent/30 to-primary/20 blur-2xl" />
+            <img src={maisonAsset.url} alt="Zahoor Al Banafssaj atelier interior" loading="lazy" width={700} height={800} className="relative w-full rounded-2xl sm:rounded-[3rem] border border-primary/30 shadow-[var(--shadow-rose)] object-cover" />
           </div>
-          <div className="lg:col-span-7 space-y-6">
-            <p className="text-xs uppercase tracking-[0.3em] text-primary">— {t("Our maison", "صالوننا")}</p>
-            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl">
+          <div className="col-span-7 space-y-2 sm:space-y-6">
+            <p className="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-primary">— {t("Our maison", "صالوننا")}</p>
+            <h2 className="font-display text-lg sm:text-5xl md:text-6xl leading-tight">
               {isAr ? (<>صالون منحوت من <em className="italic text-gradient-rose">منتصف الليل</em> والشمبانيا.</>) : (<>An atelier carved out of <em className="italic text-gradient-rose">midnight</em> and champagne.</>)}
             </h2>
-            <p className="text-muted-foreground leading-relaxed max-w-xl">
+            <p className="text-xs sm:text-base text-muted-foreground leading-relaxed max-w-xl">
               {t(
                 "Zahoor Al Banafssaj is the opposite of the bright, hurried salon. Deep rosewood walls, brass-framed mirrors, and every appointment begins with a quiet moment.",
                 "زهور البنفسج هو العكس تمامًا للصالون السريع والمزدحم. جدران من خشب الورد الداكن ومرايا بإطارات نحاسية، وكل موعد يبدأ بلحظة هدوء."
@@ -266,6 +266,7 @@ function Index() {
           </div>
         </div>
       </section>
+
 
 
 
