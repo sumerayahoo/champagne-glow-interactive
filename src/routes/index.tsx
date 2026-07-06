@@ -233,16 +233,17 @@ function Index() {
       </section>
 
       {/* GALLERY */}
-      <section id="gallery" className="relative z-10 py-24">
-        <div className="mx-auto max-w-7xl px-6 mb-12">
-          <p className="text-xs uppercase tracking-[0.3em] text-primary mb-3">— {t("Carnet", "اليوميات")}</p>
-          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl">
+      <section id="gallery" className="relative z-10 py-12 sm:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 mb-6 sm:mb-12">
+          <p className="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-primary mb-2 sm:mb-3">— {t("Carnet", "اليوميات")}</p>
+          <h2 className="font-display text-2xl sm:text-5xl md:text-6xl">
             {isAr ? (<>يوميات من <em className="italic text-gradient-rose">الإشراق</em>.</>) : (<>A diary of <em className="italic text-gradient-rose">glow</em>.</>)}
           </h2>
-          <p className="mt-3 text-sm text-muted-foreground">{t("Scroll to feel the velocity — the diary drifts with your motion.", "مرّري لتشعري بالحركة — تتحرك الصور مع تمريرك.")}</p>
+          <p className="mt-2 sm:mt-3 text-xs sm:text-sm text-muted-foreground">{t("Scroll to feel the velocity — the diary drifts with your motion.", "مرّري لتشعري بالحركة — تتحرك الصور مع تمريرك.")}</p>
         </div>
         <ScrollVelocityGallery images={gallery} />
       </section>
+
 
       {/* ABOUT */}
       <section className="relative z-10 mx-auto max-w-7xl px-4 sm:px-4 sm:px-6 py-12 sm:py-16 sm:py-24">
