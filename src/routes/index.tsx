@@ -113,28 +113,36 @@ function Index() {
           <p className="max-w-sm text-muted-foreground">{t("Each service is a slow, intentional ritual — never rushed, always tailored to your features and mood.", "كل خدمة طقس بطيء ومتأنٍّ — بلا استعجال، ومصمم لملامحك ومزاجك.")}</p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6">
           {services.map((s, i) => (
-            <article key={s.key} className="group relative overflow-hidden rounded-3xl glass-card hover:border-primary/60 transition-all">
+            <article key={s.key} className="group relative overflow-hidden rounded-2xl sm:rounded-3xl glass-card hover:border-primary/60 transition-all">
               <div className="overflow-hidden">
-                <img src={s.img} alt={isAr ? s.ar : s.en} loading="lazy" width={600} height={600} className="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-110" />
+                <img src={s.img} alt={isAr ? s.ar : s.en} loading="lazy" width={600} height={600} className="w-full h-32 sm:h-72 object-cover transition-transform duration-700 group-hover:scale-110" />
               </div>
-              <div className="p-6 space-y-3">
-                <span className="text-xs uppercase tracking-widest text-accent">0{i + 1} / {t("Atelier", "الصالون")}</span>
-                <h3 className="font-display text-2xl">{isAr ? s.ar : s.en}</h3>
-                <p className="text-sm text-muted-foreground">{isAr ? s.arDesc : s.enDesc}</p>
-                <Link to="/services" hash={s.key} className="inline-flex items-center gap-2 text-sm text-primary group-hover:gap-3 transition-all">
+              <div className="p-3 sm:p-6 space-y-1.5 sm:space-y-3">
+                <span className="text-[10px] sm:text-xs uppercase tracking-widest text-accent">0{i + 1} / {t("Atelier", "الصالون")}</span>
+                <h3 className="font-display text-base sm:text-2xl">{isAr ? s.ar : s.en}</h3>
+                <p className="hidden sm:block text-sm text-muted-foreground">{isAr ? s.arDesc : s.enDesc}</p>
+                <Link to="/services" hash={s.key} className="inline-flex items-center gap-1 sm:gap-2 text-xs sm:text-sm text-primary group-hover:gap-3 transition-all">
                   {t("View prices", "عرض الأسعار")} <span>{isAr ? "←" : "→"}</span>
                 </Link>
               </div>
             </article>
           ))}
         </div>
+
       </section>
 
       {/* GLIMPSES OF THE ATELIER — link to /works */}
       <section id="work" className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-16">
-        <div className="glass-card rounded-[2.5rem] p-6 sm:p-10 md:p-14 space-y-8">
+        <div
+          className="relative overflow-hidden rounded-[2.5rem] p-6 sm:p-10 md:p-14 space-y-8 border border-primary/20"
+          style={{
+            backgroundImage: `linear-gradient(rgba(10,6,14,0.72), rgba(10,6,14,0.82)), url(${glimpseCollage.url})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
           <div className="text-center space-y-4">
             <p className="text-xs uppercase tracking-[0.3em] text-primary">— {t("Glimpses of the atelier", "لمحات من الصالون")}</p>
             <h2 className="font-display text-3xl sm:text-4xl md:text-5xl max-w-2xl mx-auto">
@@ -148,11 +156,6 @@ function Index() {
             </p>
           </div>
 
-
-          <div className="mx-auto w-full max-w-xs sm:max-w-sm overflow-hidden rounded-2xl border border-primary/20 bg-black">
-            <img src={glimpseCollage.url} alt={t("Atelier collage", "لوحة الصالون")} className="w-full h-auto block" loading="lazy" />
-          </div>
-
           <div className="text-center">
             <Link
               to="/works"
@@ -164,56 +167,59 @@ function Index() {
         </div>
       </section>
 
+
       {/* OFFERS */}
       <section id="offers" className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-16">
-        <div className="glass-card rounded-[2.5rem] p-10 md:p-14 grid md:grid-cols-12 gap-10 items-center">
-          <div className="md:col-span-7 space-y-5">
-            <p className="text-xs uppercase tracking-[0.3em] text-primary shimmer">— {t("Offers", "العروض")}</p>
-            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl">
+        <div className="glass-card rounded-[2rem] sm:rounded-[2.5rem] p-5 sm:p-10 md:p-14 grid grid-cols-12 gap-4 sm:gap-10 items-center">
+          <div className="col-span-7 space-y-2 sm:space-y-5">
+            <p className="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-primary shimmer">— {t("Offers", "العروض")}</p>
+            <h2 className="font-display text-lg sm:text-4xl md:text-5xl leading-tight">
               {isAr ? (<>عروضنا <em className="italic text-gradient-rose">المختارة بعناية</em>.</>) : (<>Our <em className="italic text-gradient-rose">curated</em> offers.</>)}
             </h2>
-            <p className="text-muted-foreground max-w-md">
+            <p className="hidden sm:block text-muted-foreground max-w-md">
               {t(
                 "Limited-time packages on facials, nails, hair treatments and bridal bundles. Tap to view the full offer card.",
                 "باقات لفترة محدودة على الفيشل والأظافر وعلاجات الشعر وحزم العرائس. اضغطي لعرض بطاقة العروض كاملة."
               )}
             </p>
-            <OffersTrigger className="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-primary to-accent px-7 py-3.5 text-sm font-medium text-primary-foreground shadow-[var(--shadow-rose)] hover:scale-[1.02] transition-transform">
-              {t("View our offers", "عرض عروضنا")} <span>{isAr ? "←" : "→"}</span>
+            <OffersTrigger className="inline-flex items-center gap-2 sm:gap-3 rounded-full bg-gradient-to-r from-primary to-accent px-4 sm:px-7 py-2 sm:py-3.5 text-[11px] sm:text-sm font-medium text-primary-foreground shadow-[var(--shadow-rose)] hover:scale-[1.02] transition-transform">
+              {t("View offers", "عرض عروضنا")} <span>{isAr ? "←" : "→"}</span>
             </OffersTrigger>
           </div>
-          <div className="md:col-span-5">
-            <OffersTrigger className="block w-full overflow-hidden rounded-[2rem] border border-primary/30 shadow-[var(--shadow-rose)] hover:scale-[1.02] transition-transform">
+          <div className="col-span-5">
+            <OffersTrigger className="block w-full overflow-hidden rounded-2xl sm:rounded-[2rem] border border-primary/30 shadow-[var(--shadow-rose)] hover:scale-[1.02] transition-transform">
               <img src={offersPreview.url} alt={t("Exclusive offers", "العروض الحصرية")} className="w-full h-auto block" />
             </OffersTrigger>
           </div>
         </div>
+
       </section>
 
 
 
       {/* TEAM */}
-      <section id="atelier" className="relative z-10 mx-auto max-w-7xl px-4 sm:px-4 sm:px-6 py-12 sm:py-16 sm:py-24">
-        <div className="glass-card rounded-[2.5rem] p-10 md:p-16">
-          <div className="grid lg:grid-cols-12 gap-10 items-end mb-12">
-            <div className="lg:col-span-7 space-y-5">
-              <p className="text-xs uppercase tracking-[0.3em] text-primary">— {t("Our artisans", "فنانات الصالون")}</p>
-              <h2 className="font-display text-4xl sm:text-5xl md:text-6xl">{t("Hands that shape the light.", "أيادٍ تشكّل الضوء.")}</h2>
+      <section id="atelier" className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-24">
+        <div className="glass-card rounded-[2rem] sm:rounded-[2.5rem] p-5 sm:p-10 md:p-16">
+          <div className="grid grid-cols-12 gap-4 sm:gap-10 items-end mb-6 sm:mb-12">
+            <div className="col-span-7 space-y-2 sm:space-y-5">
+              <p className="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-primary">— {t("Our artisans", "فنانات الصالون")}</p>
+              <h2 className="font-display text-xl sm:text-5xl md:text-6xl leading-tight">{t("Hands that shape the light.", "أيادٍ تشكّل الضوء.")}</h2>
             </div>
-            <p className="lg:col-span-5 text-muted-foreground">{t("Seven artisans, each with a signature speciality. Tap a face to see their portfolio and leave a review.", "سبع فنانات لكل واحدة تخصصها المميز. اضغطي على الصورة لمشاهدة أعمالها وكتابة تقييمك.")}</p>
+            <p className="col-span-5 text-xs sm:text-base text-muted-foreground">{t("Seven artisans, each with a signature speciality. Tap a face to see their portfolio.", "سبع فنانات لكل واحدة تخصصها. اضغطي على الصورة لمشاهدة أعمالها.")}</p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-5">
             {ARTISTS.map((m) => (
               <Link key={m.slug} to="/artist/$slug" params={{ slug: m.slug }} className="group">
                 <figure>
-                  <div className="relative overflow-hidden rounded-[2rem] aspect-[3/4] border border-primary/20 bg-black">
+                  <div className="relative overflow-hidden rounded-2xl sm:rounded-[2rem] aspect-[3/4] border border-primary/20 bg-black">
                     <img src={m.img} alt={m.name} loading="lazy" width={512} height={768} className="h-full w-full object-contain transition-transform duration-700 group-hover:scale-105" />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/30 to-transparent pointer-events-none" />
-                    <figcaption className="absolute bottom-5 left-5 right-5 space-y-1">
-                      <p className="font-display text-xl">{isAr ? m.nameAr : m.name}</p>
-                      <p className="text-xs uppercase tracking-widest text-primary">{isAr ? m.roleAr : m.role}</p>
-                      <p className="text-xs text-muted-foreground leading-snug pt-1">{isAr ? m.specialityAr : m.speciality}</p>
-                      <p className="text-xs text-accent pt-2 group-hover:gap-3 inline-flex items-center gap-2 transition-all">
+                    <figcaption className="absolute bottom-2 sm:bottom-5 left-2 sm:left-5 right-2 sm:right-5 space-y-0.5 sm:space-y-1">
+                      <p className="font-display text-sm sm:text-xl">{isAr ? m.nameAr : m.name}</p>
+                      <p className="text-[9px] sm:text-xs uppercase tracking-widest text-primary">{isAr ? m.roleAr : m.role}</p>
+                      <p className="hidden sm:block text-xs text-muted-foreground leading-snug pt-1">{isAr ? m.specialityAr : m.speciality}</p>
+                      <p className="hidden sm:inline-flex text-xs text-accent pt-2 group-hover:gap-3 items-center gap-2 transition-all">
                         {t("View portfolio", "عرض الأعمال")} {isAr ? "←" : "→"}
                       </p>
                     </figcaption>
@@ -222,34 +228,36 @@ function Index() {
               </Link>
             ))}
           </div>
+
         </div>
       </section>
 
       {/* GALLERY */}
-      <section id="gallery" className="relative z-10 py-24">
-        <div className="mx-auto max-w-7xl px-6 mb-12">
-          <p className="text-xs uppercase tracking-[0.3em] text-primary mb-3">— {t("Carnet", "اليوميات")}</p>
-          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl">
+      <section id="gallery" className="relative z-10 py-12 sm:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 mb-6 sm:mb-12">
+          <p className="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-primary mb-2 sm:mb-3">— {t("Carnet", "اليوميات")}</p>
+          <h2 className="font-display text-2xl sm:text-5xl md:text-6xl">
             {isAr ? (<>يوميات من <em className="italic text-gradient-rose">الإشراق</em>.</>) : (<>A diary of <em className="italic text-gradient-rose">glow</em>.</>)}
           </h2>
-          <p className="mt-3 text-sm text-muted-foreground">{t("Scroll to feel the velocity — the diary drifts with your motion.", "مرّري لتشعري بالحركة — تتحرك الصور مع تمريرك.")}</p>
+          <p className="mt-2 sm:mt-3 text-xs sm:text-sm text-muted-foreground">{t("Scroll to feel the velocity — the diary drifts with your motion.", "مرّري لتشعري بالحركة — تتحرك الصور مع تمريرك.")}</p>
         </div>
         <ScrollVelocityGallery images={gallery} />
       </section>
 
+
       {/* ABOUT */}
-      <section className="relative z-10 mx-auto max-w-7xl px-4 sm:px-4 sm:px-6 py-12 sm:py-16 sm:py-24">
-        <div className="grid lg:grid-cols-12 gap-10 items-center">
-          <div className="lg:col-span-5 relative">
-            <div className="absolute -inset-4 rounded-[3rem] bg-gradient-to-tr from-accent/30 to-primary/20 blur-2xl" />
-            <img src={maisonAsset.url} alt="Zahoor Al Banafssaj atelier interior" loading="lazy" width={700} height={800} className="relative w-full rounded-[3rem] border border-primary/30 shadow-[var(--shadow-rose)] object-cover" />
+      <section className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-24">
+        <div className="grid grid-cols-12 gap-4 sm:gap-10 items-center">
+          <div className="col-span-5 relative">
+            <div className="absolute -inset-2 sm:-inset-4 rounded-[2rem] sm:rounded-[3rem] bg-gradient-to-tr from-accent/30 to-primary/20 blur-2xl" />
+            <img src={maisonAsset.url} alt="Zahoor Al Banafssaj atelier interior" loading="lazy" width={700} height={800} className="relative w-full rounded-2xl sm:rounded-[3rem] border border-primary/30 shadow-[var(--shadow-rose)] object-cover" />
           </div>
-          <div className="lg:col-span-7 space-y-6">
-            <p className="text-xs uppercase tracking-[0.3em] text-primary">— {t("Our maison", "صالوننا")}</p>
-            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl">
+          <div className="col-span-7 space-y-2 sm:space-y-6">
+            <p className="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-primary">— {t("Our maison", "صالوننا")}</p>
+            <h2 className="font-display text-lg sm:text-5xl md:text-6xl leading-tight">
               {isAr ? (<>صالون منحوت من <em className="italic text-gradient-rose">منتصف الليل</em> والشمبانيا.</>) : (<>An atelier carved out of <em className="italic text-gradient-rose">midnight</em> and champagne.</>)}
             </h2>
-            <p className="text-muted-foreground leading-relaxed max-w-xl">
+            <p className="text-xs sm:text-base text-muted-foreground leading-relaxed max-w-xl">
               {t(
                 "Zahoor Al Banafssaj is the opposite of the bright, hurried salon. Deep rosewood walls, brass-framed mirrors, and every appointment begins with a quiet moment.",
                 "زهور البنفسج هو العكس تمامًا للصالون السريع والمزدحم. جدران من خشب الورد الداكن ومرايا بإطارات نحاسية، وكل موعد يبدأ بلحظة هدوء."
@@ -262,9 +270,11 @@ function Index() {
 
 
 
+
       {/* WORDS ON VELVET */}
-      <section className="relative z-10 mx-auto max-w-7xl px-4 sm:px-4 sm:px-6 py-12 sm:py-16 sm:py-24">
-        <div className="glass-card rounded-[2.5rem] p-10 md:p-16 space-y-6">
+      <section className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-24">
+        <div className="glass-card rounded-[2rem] sm:rounded-[2.5rem] p-5 sm:p-10 md:p-16 space-y-4 sm:space-y-6">
+
           <p className="text-xs uppercase tracking-[0.3em] text-primary text-center">— {t("Words on velvet", "كلمات على المخمل")}</p>
           <div className="max-w-3xl mx-auto space-y-5 text-muted-foreground leading-relaxed text-base md:text-lg">
             {isAr ? (
