@@ -198,15 +198,16 @@ function Index() {
 
 
       {/* TEAM */}
-      <section id="atelier" className="relative z-10 mx-auto max-w-7xl px-4 sm:px-4 sm:px-6 py-12 sm:py-16 sm:py-24">
-        <div className="glass-card rounded-[2.5rem] p-10 md:p-16">
-          <div className="grid lg:grid-cols-12 gap-10 items-end mb-12">
-            <div className="lg:col-span-7 space-y-5">
-              <p className="text-xs uppercase tracking-[0.3em] text-primary">— {t("Our artisans", "فنانات الصالون")}</p>
-              <h2 className="font-display text-4xl sm:text-5xl md:text-6xl">{t("Hands that shape the light.", "أيادٍ تشكّل الضوء.")}</h2>
+      <section id="atelier" className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-24">
+        <div className="glass-card rounded-[2rem] sm:rounded-[2.5rem] p-5 sm:p-10 md:p-16">
+          <div className="grid grid-cols-12 gap-4 sm:gap-10 items-end mb-6 sm:mb-12">
+            <div className="col-span-7 space-y-2 sm:space-y-5">
+              <p className="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-primary">— {t("Our artisans", "فنانات الصالون")}</p>
+              <h2 className="font-display text-xl sm:text-5xl md:text-6xl leading-tight">{t("Hands that shape the light.", "أيادٍ تشكّل الضوء.")}</h2>
             </div>
-            <p className="lg:col-span-5 text-muted-foreground">{t("Seven artisans, each with a signature speciality. Tap a face to see their portfolio and leave a review.", "سبع فنانات لكل واحدة تخصصها المميز. اضغطي على الصورة لمشاهدة أعمالها وكتابة تقييمك.")}</p>
+            <p className="col-span-5 text-xs sm:text-base text-muted-foreground">{t("Seven artisans, each with a signature speciality. Tap a face to see their portfolio.", "سبع فنانات لكل واحدة تخصصها. اضغطي على الصورة لمشاهدة أعمالها.")}</p>
           </div>
+
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
             {ARTISTS.map((m) => (
               <Link key={m.slug} to="/artist/$slug" params={{ slug: m.slug }} className="group">
