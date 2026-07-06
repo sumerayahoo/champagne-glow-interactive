@@ -133,36 +133,39 @@ function FloatingDiamond({ position, scrollRef }: { position: [number, number, n
 
 export default function Scene3D() {
   const scrollRef = useScrollY();
+  const isMobile = typeof window !== "undefined" && window.matchMedia("(max-width: 640px)").matches;
+  const s = isMobile ? 0.55 : 1;
   return (
     <div className="fixed inset-0 -z-10 pointer-events-none">
-      <Canvas camera={{ position: [0, 0, 6], fov: 50 }} dpr={[1, 1.5]}>
+      <Canvas camera={{ position: [0, 0, isMobile ? 7.5 : 6], fov: 50 }} dpr={[1, 1.5]}>
         <ambientLight intensity={0.4} />
         <pointLight position={[5, 5, 5]} intensity={2} color={ROSE_GOLD} />
         <pointLight position={[-5, -3, 3]} intensity={1.5} color={CHAMPAGNE} />
         <spotLight position={[0, 10, 0]} intensity={1} color="#fff" />
 
         <Float speed={1.5} rotationIntensity={0.5} floatIntensity={0.8}>
-          <Lipstick position={[-3.5, 1.5, 0]} scrollRef={scrollRef} />
+          <group scale={s}><Lipstick position={[-3.5, 1.5, 0]} scrollRef={scrollRef} /></group>
         </Float>
         <Float speed={1.2} rotationIntensity={0.6} floatIntensity={1}>
-          <Mascara position={[3.5, 0.5, -1]} scrollRef={scrollRef} />
+          <group scale={s}><Mascara position={[3.5, 0.5, -1]} scrollRef={scrollRef} /></group>
         </Float>
         <Float speed={1.8} rotationIntensity={0.4} floatIntensity={0.6}>
-          <CompactPowder position={[-3, -2, 1]} scrollRef={scrollRef} />
+          <group scale={s}><CompactPowder position={[-3, -2, 1]} scrollRef={scrollRef} /></group>
         </Float>
         <Float speed={2} rotationIntensity={0.5} floatIntensity={0.9}>
-          <Lipstick position={[3, -2.5, 0]} scrollRef={scrollRef} />
+          <group scale={s}><Lipstick position={[3, -2.5, 0]} scrollRef={scrollRef} /></group>
         </Float>
         <Float speed={1.3} rotationIntensity={0.4} floatIntensity={0.7}>
-          <CompactPowder position={[3.8, 2.5, -2]} scrollRef={scrollRef} />
+          <group scale={s}><CompactPowder position={[3.8, 2.5, -2]} scrollRef={scrollRef} /></group>
         </Float>
 
-        <FloatingDiamond position={[-2, 2.8, 1]} scrollRef={scrollRef} />
-        <FloatingDiamond position={[2.3, -1, 1.5]} scrollRef={scrollRef} />
-        <FloatingDiamond position={[0, 0, -2]} scrollRef={scrollRef} />
+        <group scale={s}><FloatingDiamond position={[-2, 2.8, 1]} scrollRef={scrollRef} /></group>
+        <group scale={s}><FloatingDiamond position={[2.3, -1, 1.5]} scrollRef={scrollRef} /></group>
+        <group scale={s}><FloatingDiamond position={[0, 0, -2]} scrollRef={scrollRef} /></group>
 
         <Environment preset="sunset" />
       </Canvas>
     </div>
   );
 }
+
