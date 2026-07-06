@@ -134,7 +134,14 @@ function Index() {
 
       {/* GLIMPSES OF THE ATELIER — link to /works */}
       <section id="work" className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-16">
-        <div className="glass-card rounded-[2.5rem] p-6 sm:p-10 md:p-14 space-y-8">
+        <div
+          className="relative overflow-hidden rounded-[2.5rem] p-6 sm:p-10 md:p-14 space-y-8 border border-primary/20"
+          style={{
+            backgroundImage: `linear-gradient(rgba(10,6,14,0.72), rgba(10,6,14,0.82)), url(${glimpseCollage.url})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
           <div className="text-center space-y-4">
             <p className="text-xs uppercase tracking-[0.3em] text-primary">— {t("Glimpses of the atelier", "لمحات من الصالون")}</p>
             <h2 className="font-display text-3xl sm:text-4xl md:text-5xl max-w-2xl mx-auto">
@@ -148,11 +155,6 @@ function Index() {
             </p>
           </div>
 
-
-          <div className="mx-auto w-full max-w-xs sm:max-w-sm overflow-hidden rounded-2xl border border-primary/20 bg-black">
-            <img src={glimpseCollage.url} alt={t("Atelier collage", "لوحة الصالون")} className="w-full h-auto block" loading="lazy" />
-          </div>
-
           <div className="text-center">
             <Link
               to="/works"
@@ -163,6 +165,7 @@ function Index() {
           </div>
         </div>
       </section>
+
 
       {/* OFFERS */}
       <section id="offers" className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-16">
