@@ -272,8 +272,9 @@ function Index() {
 
 
       {/* WORDS ON VELVET */}
-      <section className="relative z-10 mx-auto max-w-7xl px-4 sm:px-4 sm:px-6 py-12 sm:py-16 sm:py-24">
-        <div className="glass-card rounded-[2.5rem] p-10 md:p-16 space-y-6">
+      <section className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-24">
+        <div className="glass-card rounded-[2rem] sm:rounded-[2.5rem] p-5 sm:p-10 md:p-16 space-y-4 sm:space-y-6">
+
           <p className="text-xs uppercase tracking-[0.3em] text-primary text-center">— {t("Words on velvet", "كلمات على المخمل")}</p>
           <div className="max-w-3xl mx-auto space-y-5 text-muted-foreground leading-relaxed text-base md:text-lg">
             {isAr ? (
