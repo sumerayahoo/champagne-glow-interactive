@@ -113,23 +113,24 @@ function Index() {
           <p className="max-w-sm text-muted-foreground">{t("Each service is a slow, intentional ritual — never rushed, always tailored to your features and mood.", "كل خدمة طقس بطيء ومتأنٍّ — بلا استعجال، ومصمم لملامحك ومزاجك.")}</p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6">
           {services.map((s, i) => (
-            <article key={s.key} className="group relative overflow-hidden rounded-3xl glass-card hover:border-primary/60 transition-all">
+            <article key={s.key} className="group relative overflow-hidden rounded-2xl sm:rounded-3xl glass-card hover:border-primary/60 transition-all">
               <div className="overflow-hidden">
-                <img src={s.img} alt={isAr ? s.ar : s.en} loading="lazy" width={600} height={600} className="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-110" />
+                <img src={s.img} alt={isAr ? s.ar : s.en} loading="lazy" width={600} height={600} className="w-full h-32 sm:h-72 object-cover transition-transform duration-700 group-hover:scale-110" />
               </div>
-              <div className="p-6 space-y-3">
-                <span className="text-xs uppercase tracking-widest text-accent">0{i + 1} / {t("Atelier", "الصالون")}</span>
-                <h3 className="font-display text-2xl">{isAr ? s.ar : s.en}</h3>
-                <p className="text-sm text-muted-foreground">{isAr ? s.arDesc : s.enDesc}</p>
-                <Link to="/services" hash={s.key} className="inline-flex items-center gap-2 text-sm text-primary group-hover:gap-3 transition-all">
+              <div className="p-3 sm:p-6 space-y-1.5 sm:space-y-3">
+                <span className="text-[10px] sm:text-xs uppercase tracking-widest text-accent">0{i + 1} / {t("Atelier", "الصالون")}</span>
+                <h3 className="font-display text-base sm:text-2xl">{isAr ? s.ar : s.en}</h3>
+                <p className="hidden sm:block text-sm text-muted-foreground">{isAr ? s.arDesc : s.enDesc}</p>
+                <Link to="/services" hash={s.key} className="inline-flex items-center gap-1 sm:gap-2 text-xs sm:text-sm text-primary group-hover:gap-3 transition-all">
                   {t("View prices", "عرض الأسعار")} <span>{isAr ? "←" : "→"}</span>
                 </Link>
               </div>
             </article>
           ))}
         </div>
+
       </section>
 
       {/* GLIMPSES OF THE ATELIER — link to /works */}
