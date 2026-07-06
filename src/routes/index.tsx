@@ -208,18 +208,18 @@ function Index() {
             <p className="col-span-5 text-xs sm:text-base text-muted-foreground">{t("Seven artisans, each with a signature speciality. Tap a face to see their portfolio.", "سبع فنانات لكل واحدة تخصصها. اضغطي على الصورة لمشاهدة أعمالها.")}</p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-5">
             {ARTISTS.map((m) => (
               <Link key={m.slug} to="/artist/$slug" params={{ slug: m.slug }} className="group">
                 <figure>
-                  <div className="relative overflow-hidden rounded-[2rem] aspect-[3/4] border border-primary/20 bg-black">
+                  <div className="relative overflow-hidden rounded-2xl sm:rounded-[2rem] aspect-[3/4] border border-primary/20 bg-black">
                     <img src={m.img} alt={m.name} loading="lazy" width={512} height={768} className="h-full w-full object-contain transition-transform duration-700 group-hover:scale-105" />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/30 to-transparent pointer-events-none" />
-                    <figcaption className="absolute bottom-5 left-5 right-5 space-y-1">
-                      <p className="font-display text-xl">{isAr ? m.nameAr : m.name}</p>
-                      <p className="text-xs uppercase tracking-widest text-primary">{isAr ? m.roleAr : m.role}</p>
-                      <p className="text-xs text-muted-foreground leading-snug pt-1">{isAr ? m.specialityAr : m.speciality}</p>
-                      <p className="text-xs text-accent pt-2 group-hover:gap-3 inline-flex items-center gap-2 transition-all">
+                    <figcaption className="absolute bottom-2 sm:bottom-5 left-2 sm:left-5 right-2 sm:right-5 space-y-0.5 sm:space-y-1">
+                      <p className="font-display text-sm sm:text-xl">{isAr ? m.nameAr : m.name}</p>
+                      <p className="text-[9px] sm:text-xs uppercase tracking-widest text-primary">{isAr ? m.roleAr : m.role}</p>
+                      <p className="hidden sm:block text-xs text-muted-foreground leading-snug pt-1">{isAr ? m.specialityAr : m.speciality}</p>
+                      <p className="hidden sm:inline-flex text-xs text-accent pt-2 group-hover:gap-3 items-center gap-2 transition-all">
                         {t("View portfolio", "عرض الأعمال")} {isAr ? "←" : "→"}
                       </p>
                     </figcaption>
@@ -228,6 +228,7 @@ function Index() {
               </Link>
             ))}
           </div>
+
         </div>
       </section>
 
