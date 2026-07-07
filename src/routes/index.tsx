@@ -77,16 +77,22 @@ function Index() {
             <ul className="hidden md:flex items-center gap-7 text-sm text-muted-foreground">
               {[
                 { en: "Home", ar: "الرئيسية", id: "home" },
-                { en: "Services", ar: "الخدمات", id: "services" },
                 { en: "Offers", ar: "العروض", id: "offers" },
-                { en: "Atelier", ar: "الفريق", id: "atelier" },
                 { en: "Our Work", ar: "أعمالنا", id: "work" },
                 { en: "Contact", ar: "تواصل", id: "contact" },
               ].map(l => (
                 <li key={l.id}><a href={`#${l.id}`} className="hover:text-primary transition-colors">{isAr ? l.ar : l.en}</a></li>
               ))}
+              <li><Link to="/services" className="hover:text-primary transition-colors">{t("Prices", "الأسعار")}</Link></li>
+              <li><a href="#atelier" className="hover:text-primary transition-colors">{t("Our Artists", "فنانونا")}</a></li>
             </ul>
             <div className="flex shrink-0 items-center gap-2 sm:gap-3">
+              <Link to="/services" className="md:hidden rounded-full border border-primary/40 bg-card/40 px-3 py-2 text-xs backdrop-blur-md hover:bg-primary hover:text-primary-foreground transition-all">
+                {t("Prices", "الأسعار")}
+              </Link>
+              <a href="#atelier" className="md:hidden rounded-full border border-primary/40 bg-card/40 px-3 py-2 text-xs backdrop-blur-md hover:bg-primary hover:text-primary-foreground transition-all">
+                {t("Artists", "الفنانون")}
+              </a>
               <LangToggle />
               <InstagramTrigger className="rounded-full border border-primary/40 bg-card/40 px-3 sm:px-5 py-2 text-xs sm:text-sm backdrop-blur-md hover:bg-primary hover:text-primary-foreground transition-all">
                 <span className="hidden sm:inline">{t("Instagram", "إنستغرام")}</span>
