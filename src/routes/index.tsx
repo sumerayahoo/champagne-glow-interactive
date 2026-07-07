@@ -254,14 +254,14 @@ function Index() {
       {/* ABOUT */}
       <section className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-24">
         <div className="grid grid-cols-12 gap-4 sm:gap-10 items-center">
-          <div className="col-span-5 relative">
+          <div className="col-span-7 sm:col-span-5 relative">
             <div className="absolute -inset-2 sm:-inset-4 rounded-[2rem] sm:rounded-[3rem] bg-gradient-to-tr from-accent/30 to-primary/20 blur-2xl" />
-            <img src={maisonAsset.url} alt="Zahoor Al Banafssaj atelier interior" loading="lazy" width={700} height={800} className="relative w-full rounded-2xl sm:rounded-[3rem] border border-primary/30 shadow-[var(--shadow-rose)] object-cover" />
+            <img src={maisonAsset.url} alt="Zahoor Al Banafssaj salon interior" loading="lazy" width={700} height={800} className="relative w-full rounded-2xl sm:rounded-[3rem] border border-primary/30 shadow-[var(--shadow-rose)] object-cover" />
           </div>
-          <div className="col-span-7 space-y-2 sm:space-y-6">
+          <div className="col-span-5 sm:col-span-7 space-y-2 sm:space-y-6">
             <p className="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-primary">— {t("Our maison", "صالوننا")}</p>
-            <h2 className="font-display text-lg sm:text-5xl md:text-6xl leading-tight">
-              {isAr ? (<>صالون منحوت من <em className="italic text-gradient-rose">منتصف الليل</em> والشمبانيا.</>) : (<>An atelier carved out of <em className="italic text-gradient-rose">midnight</em> and champagne.</>)}
+            <h2 className="font-display text-base sm:text-5xl md:text-6xl leading-tight">
+              {isAr ? (<>صالون منحوت من <em className="italic text-gradient-rose">منتصف الليل</em> والشمبانيا.</>) : (<>A salon carved out of <em className="italic text-gradient-rose">midnight</em> and champagne.</>)}
             </h2>
             <p className="text-xs sm:text-base text-muted-foreground leading-relaxed max-w-xl">
               {t(
