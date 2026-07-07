@@ -150,9 +150,9 @@ function Index() {
           }}
         >
           <div className="text-center space-y-4">
-            <p className="text-xs uppercase tracking-[0.3em] text-primary">— {t("Glimpses of the atelier", "لمحات من الصالون")}</p>
+            <p className="text-xs uppercase tracking-[0.3em] text-primary">— {t("Glimpses of the salon", "لمحات من الصالون")}</p>
             <h2 className="font-display text-3xl sm:text-4xl md:text-5xl max-w-2xl mx-auto">
-              {isAr ? (<>لمحات من <em className="italic text-gradient-rose">صالوننا</em>.</>) : (<>Glimpses from the <em className="italic text-gradient-rose">atelier</em>.</>)}
+              {isAr ? (<>لمحات من <em className="italic text-gradient-rose">صالوننا</em>.</>) : (<>Glimpses from the <em className="italic text-gradient-rose">salon</em>.</>)}
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
               {t(
