@@ -87,9 +87,9 @@ function ServicesPage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-          {cards.map((c) => (
-            <div key={c.en} className="glass-card rounded-2xl sm:rounded-3xl p-2 sm:p-3 overflow-hidden">
+        <div className={`grid gap-4 sm:gap-6 ${visible.length === 1 ? "grid-cols-1 max-w-3xl mx-auto" : "grid-cols-1 md:grid-cols-2"}`}>
+          {visible.map((c) => (
+            <div key={c.key} className="glass-card rounded-2xl sm:rounded-3xl p-2 sm:p-3 overflow-hidden">
               <img
                 src={c.src}
                 alt={isAr ? c.ar : c.en}
@@ -99,6 +99,14 @@ function ServicesPage() {
             </div>
           ))}
         </div>
+
+        {visible.length === 1 && (
+          <div className="text-center mt-8">
+            <Link to="/services" className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-card/40 px-5 py-2.5 text-sm hover:bg-primary hover:text-primary-foreground transition-all">
+              {t("View all prices", "عرض كل الأسعار")} <span>{isAr ? "←" : "→"}</span>
+            </Link>
+          </div>
+        )}
       </main>
     </div>
   );
