@@ -1,7 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import Petals from "@/components/Petals";
 import logoAsset from "@/assets/zahoor-logo.png.asset.json";
-import pricesAsset from "@/assets/prices.jpg.asset.json";
+import priceHenna from "@/assets/prices/price-henna.png.asset.json";
+import priceHair from "@/assets/prices/price-hair.png.asset.json";
+import priceMakeup from "@/assets/prices/price-makeup.png.asset.json";
+import priceNails from "@/assets/prices/price-nails.png.asset.json";
+import priceFacial from "@/assets/prices/price-facial.png.asset.json";
+import priceBridal from "@/assets/prices/price-bridal.png.asset.json";
 import { useLang, LangToggle } from "@/lib/lang";
 import { InstagramTrigger } from "@/components/InstagramModal";
 
@@ -12,7 +17,7 @@ export const Route = createFileRoute("/services")({
       {
         name: "description",
         content:
-          "Full price list — henna, hair, makeup, facial, threading, waxing, manicure and pedicure. Prices in Omani Rial.",
+          "Full price list — henna, hair makeovers, makeup, manicure & pedicure, facial, threading, waxing and bridal works. Prices in Omani Rial.",
       },
     ],
   }),
@@ -21,6 +26,15 @@ export const Route = createFileRoute("/services")({
 
 function ServicesPage() {
   const { isAr, t } = useLang();
+
+  const cards = [
+    { src: priceHenna.url, en: "Henna", ar: "الحناء" },
+    { src: priceHair.url, en: "Hair Makeovers", ar: "تجديد الشعر" },
+    { src: priceMakeup.url, en: "Makeup", ar: "المكياج" },
+    { src: priceNails.url, en: "Manicure & Pedicure", ar: "مانيكير وباديكير" },
+    { src: priceFacial.url, en: "Facial, Threading & Waxing", ar: "العناية بالوجه والخيط والشمع" },
+    { src: priceBridal.url, en: "Bridal Works", ar: "أعمال العرائس" },
+  ];
 
   return (
     <div className="relative min-h-screen text-foreground" dir={isAr ? "rtl" : "ltr"}>
@@ -49,10 +63,9 @@ function ServicesPage() {
             </Link>
           </div>
         </nav>
-
       </header>
 
-      <main className="relative z-10 mx-auto max-w-5xl px-6 pb-24">
+      <main className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 pb-24">
         <div className="text-center space-y-4 mb-10">
           <p className="text-xs uppercase tracking-[0.3em] text-primary">
             — {t("Services & Prices", "الخدمات والأسعار")}
@@ -68,12 +81,17 @@ function ServicesPage() {
           </p>
         </div>
 
-        <div className="glass-card rounded-3xl p-3 md:p-5">
-          <img
-            src={pricesAsset.url}
-            alt={t("Zahoor Al Banafssaj full price list", "قائمة أسعار زهور البنفسج كاملة")}
-            className="w-full h-auto rounded-2xl"
-          />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+          {cards.map((c) => (
+            <div key={c.en} className="glass-card rounded-2xl sm:rounded-3xl p-2 sm:p-3 overflow-hidden">
+              <img
+                src={c.src}
+                alt={isAr ? c.ar : c.en}
+                loading="lazy"
+                className="w-full h-auto rounded-xl sm:rounded-2xl block"
+              />
+            </div>
+          ))}
         </div>
       </main>
     </div>

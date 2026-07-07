@@ -77,16 +77,22 @@ function Index() {
             <ul className="hidden md:flex items-center gap-7 text-sm text-muted-foreground">
               {[
                 { en: "Home", ar: "الرئيسية", id: "home" },
-                { en: "Services", ar: "الخدمات", id: "services" },
                 { en: "Offers", ar: "العروض", id: "offers" },
-                { en: "Atelier", ar: "الفريق", id: "atelier" },
                 { en: "Our Work", ar: "أعمالنا", id: "work" },
                 { en: "Contact", ar: "تواصل", id: "contact" },
               ].map(l => (
                 <li key={l.id}><a href={`#${l.id}`} className="hover:text-primary transition-colors">{isAr ? l.ar : l.en}</a></li>
               ))}
+              <li><Link to="/services" className="hover:text-primary transition-colors">{t("Prices", "الأسعار")}</Link></li>
+              <li><a href="#atelier" className="hover:text-primary transition-colors">{t("Our Artists", "فنانونا")}</a></li>
             </ul>
             <div className="flex shrink-0 items-center gap-2 sm:gap-3">
+              <Link to="/services" className="md:hidden rounded-full border border-primary/40 bg-card/40 px-3 py-2 text-xs backdrop-blur-md hover:bg-primary hover:text-primary-foreground transition-all">
+                {t("Prices", "الأسعار")}
+              </Link>
+              <a href="#atelier" className="md:hidden rounded-full border border-primary/40 bg-card/40 px-3 py-2 text-xs backdrop-blur-md hover:bg-primary hover:text-primary-foreground transition-all">
+                {t("Artists", "الفنانون")}
+              </a>
               <LangToggle />
               <InstagramTrigger className="rounded-full border border-primary/40 bg-card/40 px-3 sm:px-5 py-2 text-xs sm:text-sm backdrop-blur-md hover:bg-primary hover:text-primary-foreground transition-all">
                 <span className="hidden sm:inline">{t("Instagram", "إنستغرام")}</span>
@@ -110,7 +116,7 @@ function Index() {
             <p className="text-xs uppercase tracking-[0.3em] text-primary mb-3">— {t("Our rituals", "جلساتنا")}</p>
             <h2 className="font-display text-4xl sm:text-5xl md:text-6xl max-w-xl">{t("A quiet ceremony for every gesture.", "طقس هادئ لكل لمسة.")}</h2>
           </div>
-          <p className="max-w-sm text-muted-foreground">{t("Each service is a slow, intentional ritual — never rushed, always tailored to your features and mood.", "كل خدمة طقس بطيء ومتأنٍّ — بلا استعجال، ومصمم لملامحك ومزاجك.")}</p>
+          <p className="max-w-sm text-muted-foreground">{t("Experience professional beauty services designed to leave you feeling confident and refreshed.", "استمتعي بخدمات تجميل احترافية مصممة لتمنحك الثقة والانتعاش.")}</p>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6">
@@ -120,7 +126,7 @@ function Index() {
                 <img src={s.img} alt={isAr ? s.ar : s.en} loading="lazy" width={600} height={600} className="w-full h-32 sm:h-72 object-cover transition-transform duration-700 group-hover:scale-110" />
               </div>
               <div className="p-3 sm:p-6 space-y-1.5 sm:space-y-3">
-                <span className="text-[10px] sm:text-xs uppercase tracking-widest text-accent">0{i + 1} / {t("Atelier", "الصالون")}</span>
+                <span className="text-[10px] sm:text-xs uppercase tracking-widest text-accent">0{i + 1} / {t("Salon", "الصالون")}</span>
                 <h3 className="font-display text-base sm:text-2xl">{isAr ? s.ar : s.en}</h3>
                 <p className="hidden sm:block text-sm text-muted-foreground">{isAr ? s.arDesc : s.enDesc}</p>
                 <Link to="/services" hash={s.key} className="inline-flex items-center gap-1 sm:gap-2 text-xs sm:text-sm text-primary group-hover:gap-3 transition-all">
@@ -144,9 +150,9 @@ function Index() {
           }}
         >
           <div className="text-center space-y-4">
-            <p className="text-xs uppercase tracking-[0.3em] text-primary">— {t("Glimpses of the atelier", "لمحات من الصالون")}</p>
+            <p className="text-xs uppercase tracking-[0.3em] text-primary">— {t("Glimpses of the salon", "لمحات من الصالون")}</p>
             <h2 className="font-display text-3xl sm:text-4xl md:text-5xl max-w-2xl mx-auto">
-              {isAr ? (<>لمحات من <em className="italic text-gradient-rose">صالوننا</em>.</>) : (<>Glimpses from the <em className="italic text-gradient-rose">atelier</em>.</>)}
+              {isAr ? (<>لمحات من <em className="italic text-gradient-rose">صالوننا</em>.</>) : (<>Glimpses from the <em className="italic text-gradient-rose">salon</em>.</>)}
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
               {t(
@@ -248,14 +254,14 @@ function Index() {
       {/* ABOUT */}
       <section className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-24">
         <div className="grid grid-cols-12 gap-4 sm:gap-10 items-center">
-          <div className="col-span-5 relative">
+          <div className="col-span-7 sm:col-span-5 relative">
             <div className="absolute -inset-2 sm:-inset-4 rounded-[2rem] sm:rounded-[3rem] bg-gradient-to-tr from-accent/30 to-primary/20 blur-2xl" />
-            <img src={maisonAsset.url} alt="Zahoor Al Banafssaj atelier interior" loading="lazy" width={700} height={800} className="relative w-full rounded-2xl sm:rounded-[3rem] border border-primary/30 shadow-[var(--shadow-rose)] object-cover" />
+            <img src={maisonAsset.url} alt="Zahoor Al Banafssaj salon interior" loading="lazy" width={700} height={800} className="relative w-full rounded-2xl sm:rounded-[3rem] border border-primary/30 shadow-[var(--shadow-rose)] object-cover" />
           </div>
-          <div className="col-span-7 space-y-2 sm:space-y-6">
+          <div className="col-span-5 sm:col-span-7 space-y-2 sm:space-y-6">
             <p className="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-primary">— {t("Our maison", "صالوننا")}</p>
-            <h2 className="font-display text-lg sm:text-5xl md:text-6xl leading-tight">
-              {isAr ? (<>صالون منحوت من <em className="italic text-gradient-rose">منتصف الليل</em> والشمبانيا.</>) : (<>An atelier carved out of <em className="italic text-gradient-rose">midnight</em> and champagne.</>)}
+            <h2 className="font-display text-base sm:text-5xl md:text-6xl leading-tight">
+              {isAr ? (<>صالون منحوت من <em className="italic text-gradient-rose">منتصف الليل</em> والشمبانيا.</>) : (<>A salon carved out of <em className="italic text-gradient-rose">midnight</em> and champagne.</>)}
             </h2>
             <p className="text-xs sm:text-base text-muted-foreground leading-relaxed max-w-xl">
               {t(
