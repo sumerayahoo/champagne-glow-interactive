@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, useLocation } from "@tanstack/react-router";
 import Petals from "@/components/Petals";
 import logoAsset from "@/assets/zahoor-logo.png.asset.json";
 import priceHenna from "@/assets/prices/price-henna.png.asset.json";
@@ -26,15 +26,21 @@ export const Route = createFileRoute("/services")({
 
 function ServicesPage() {
   const { isAr, t } = useLang();
+  const { hash } = useLocation();
 
   const cards = [
-    { src: priceHenna.url, en: "Henna", ar: "الحناء" },
-    { src: priceHair.url, en: "Hair Makeovers", ar: "تجديد الشعر" },
-    { src: priceMakeup.url, en: "Makeup", ar: "المكياج" },
-    { src: priceNails.url, en: "Manicure & Pedicure", ar: "مانيكير وباديكير" },
-    { src: priceFacial.url, en: "Facial, Threading & Waxing", ar: "العناية بالوجه والخيط والشمع" },
-    { src: priceBridal.url, en: "Bridal Works", ar: "أعمال العرائس" },
+    { key: "henna", src: priceHenna.url, en: "Henna", ar: "الحناء" },
+    { key: "hair-makeover", src: priceHair.url, en: "Hair Makeovers", ar: "تجديد الشعر" },
+    { key: "makeup", src: priceMakeup.url, en: "Makeup", ar: "المكياج" },
+    { key: "manicure-pedicure", src: priceNails.url, en: "Manicure & Pedicure", ar: "مانيكير وباديكير" },
+    { key: "facial", src: priceFacial.url, en: "Facial, Threading & Waxing", ar: "العناية بالوجه والخيط والشمع" },
+    { key: "bridal-works", src: priceBridal.url, en: "Bridal Works", ar: "أعمال العرائس" },
   ];
+
+  const activeKey = (hash || "").replace(/^#/, "");
+  const visible = cards.some((c) => c.key === activeKey)
+    ? cards.filter((c) => c.key === activeKey)
+    : cards;
 
   return (
     <div className="relative min-h-screen text-foreground" dir={isAr ? "rtl" : "ltr"}>
@@ -81,9 +87,9 @@ function ServicesPage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-          {cards.map((c) => (
-            <div key={c.en} className="glass-card rounded-2xl sm:rounded-3xl p-2 sm:p-3 overflow-hidden">
+        <div className={`grid gap-4 sm:gap-6 ${visible.length === 1 ? "grid-cols-1 max-w-3xl mx-auto" : "grid-cols-1 md:grid-cols-2"}`}>
+          {visible.map((c) => (
+            <div key={c.key} className="glass-card rounded-2xl sm:rounded-3xl p-2 sm:p-3 overflow-hidden">
               <img
                 src={c.src}
                 alt={isAr ? c.ar : c.en}
@@ -93,6 +99,14 @@ function ServicesPage() {
             </div>
           ))}
         </div>
+
+        {visible.length === 1 && (
+          <div className="text-center mt-8">
+            <Link to="/services" className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-card/40 px-5 py-2.5 text-sm hover:bg-primary hover:text-primary-foreground transition-all">
+              {t("View all prices", "عرض كل الأسعار")} <span>{isAr ? "←" : "→"}</span>
+            </Link>
+          </div>
+        )}
       </main>
     </div>
   );
