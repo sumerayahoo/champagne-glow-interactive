@@ -116,7 +116,7 @@ function Index() {
             <p className="text-xs uppercase tracking-[0.3em] text-primary mb-3">— {t("Our rituals", "جلساتنا")}</p>
             <h2 className="font-display text-4xl sm:text-5xl md:text-6xl max-w-xl">{t("A quiet ceremony for every gesture.", "طقس هادئ لكل لمسة.")}</h2>
           </div>
-          <p className="max-w-sm text-muted-foreground">{t("Each service is a slow, intentional ritual — never rushed, always tailored to your features and mood.", "كل خدمة طقس بطيء ومتأنٍّ — بلا استعجال، ومصمم لملامحك ومزاجك.")}</p>
+          <p className="max-w-sm text-muted-foreground">{t("Experience professional beauty services designed to leave you feeling confident and refreshed.", "استمتعي بخدمات تجميل احترافية مصممة لتمنحك الثقة والانتعاش.")}</p>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6">
