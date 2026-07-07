@@ -26,15 +26,21 @@ export const Route = createFileRoute("/services")({
 
 function ServicesPage() {
   const { isAr, t } = useLang();
+  const { hash } = useLocation();
 
   const cards = [
-    { src: priceHenna.url, en: "Henna", ar: "الحناء" },
-    { src: priceHair.url, en: "Hair Makeovers", ar: "تجديد الشعر" },
-    { src: priceMakeup.url, en: "Makeup", ar: "المكياج" },
-    { src: priceNails.url, en: "Manicure & Pedicure", ar: "مانيكير وباديكير" },
-    { src: priceFacial.url, en: "Facial, Threading & Waxing", ar: "العناية بالوجه والخيط والشمع" },
-    { src: priceBridal.url, en: "Bridal Works", ar: "أعمال العرائس" },
+    { key: "henna", src: priceHenna.url, en: "Henna", ar: "الحناء" },
+    { key: "hair-makeover", src: priceHair.url, en: "Hair Makeovers", ar: "تجديد الشعر" },
+    { key: "makeup", src: priceMakeup.url, en: "Makeup", ar: "المكياج" },
+    { key: "manicure-pedicure", src: priceNails.url, en: "Manicure & Pedicure", ar: "مانيكير وباديكير" },
+    { key: "facial", src: priceFacial.url, en: "Facial, Threading & Waxing", ar: "العناية بالوجه والخيط والشمع" },
+    { key: "bridal-works", src: priceBridal.url, en: "Bridal Works", ar: "أعمال العرائس" },
   ];
+
+  const activeKey = (hash || "").replace(/^#/, "");
+  const visible = cards.some((c) => c.key === activeKey)
+    ? cards.filter((c) => c.key === activeKey)
+    : cards;
 
   return (
     <div className="relative min-h-screen text-foreground" dir={isAr ? "rtl" : "ltr"}>
