@@ -126,7 +126,7 @@ function Index() {
                 <img src={s.img} alt={isAr ? s.ar : s.en} loading="lazy" width={600} height={600} className="w-full h-32 sm:h-72 object-cover transition-transform duration-700 group-hover:scale-110" />
               </div>
               <div className="p-3 sm:p-6 space-y-1.5 sm:space-y-3">
-                <span className="text-[10px] sm:text-xs uppercase tracking-widest text-accent">0{i + 1} / {t("Atelier", "الصالون")}</span>
+                <span className="text-[10px] sm:text-xs uppercase tracking-widest text-accent">0{i + 1} / {t("Salon", "الصالون")}</span>
                 <h3 className="font-display text-base sm:text-2xl">{isAr ? s.ar : s.en}</h3>
                 <p className="hidden sm:block text-sm text-muted-foreground">{isAr ? s.arDesc : s.enDesc}</p>
                 <Link to="/services" hash={s.key} className="inline-flex items-center gap-1 sm:gap-2 text-xs sm:text-sm text-primary group-hover:gap-3 transition-all">
