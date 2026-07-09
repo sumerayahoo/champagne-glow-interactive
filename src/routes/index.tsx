@@ -66,11 +66,12 @@ function Index() {
       {/* NAV — overlay bar over hero carousel (Mukadam-style) */}
       <header className="relative z-20">
         <div className="bg-background/85 backdrop-blur-md border-b border-primary/15">
-          <nav className="mx-auto flex max-w-7xl items-center justify-between gap-2 px-3 sm:px-6 py-2.5 sm:py-4">
+          <nav className="mx-auto flex max-w-7xl items-center justify-between gap-2 px-3 sm:px-6 py-3 sm:py-4">
             <a href="#" className="flex min-w-0 items-center gap-2 sm:gap-3">
-              <img src={logoAsset.url} alt="Zahoor Al Banafssaj" width={56} height={56} className="h-9 w-9 sm:h-14 sm:w-14 shrink-0 rounded-full object-cover shadow-[var(--shadow-rose)]" />
+              <img src={logoAsset.url} alt="Zahoor Al Banafssaj" width={56} height={56} className="h-11 w-11 sm:h-14 sm:w-14 shrink-0 rounded-full object-cover shadow-[var(--shadow-rose)]" />
               <span className="flex min-w-0 flex-col leading-tight">
-                <span className="font-display text-sm sm:text-xl md:text-2xl tracking-wide truncate">Zahoor Al Banafssaj</span>
+                <span className="font-display text-base sm:text-xl md:text-2xl tracking-wide truncate">Zahoor Al Banafssaj</span>
+
 
 
                 <span className="hidden sm:inline text-[10px] uppercase tracking-[0.3em] text-primary">{t("Beauty Maison", "صالون الجمال")}</span>
