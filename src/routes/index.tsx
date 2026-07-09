@@ -70,10 +70,8 @@ function Index() {
             <a href="#" className="flex min-w-0 items-center gap-2 sm:gap-3">
               <img src={logoAsset.url} alt="Zahoor Al Banafssaj" width={56} height={56} className="h-9 w-9 sm:h-14 sm:w-14 shrink-0 rounded-full object-cover shadow-[var(--shadow-rose)]" />
               <span className="flex min-w-0 flex-col leading-tight">
-                <span className="font-display text-sm sm:text-xl md:text-2xl tracking-wide truncate">
-                  <span className="hidden sm:inline">Zahoor Al Banafssaj</span>
-                  <span className="sm:hidden">Zahoor</span>
-                </span>
+                <span className="font-display text-sm sm:text-xl md:text-2xl tracking-wide truncate">Zahoor Al Banafssaj</span>
+
 
                 <span className="hidden sm:inline text-[10px] uppercase tracking-[0.3em] text-primary">{t("Beauty Maison", "صالون الجمال")}</span>
               </span>
