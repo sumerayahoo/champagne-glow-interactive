@@ -40,22 +40,27 @@ function WorksPage() {
             <img
               src={logoAsset.url}
               alt="Zahoor Al Banafssaj"
-              className="h-10 w-10 sm:h-12 sm:w-12 shrink-0 rounded-full object-cover shadow-[var(--shadow-rose)]"
+              className="h-9 w-9 sm:h-12 sm:w-12 shrink-0 rounded-full object-cover shadow-[var(--shadow-rose)]"
             />
-            <span className="font-display text-base sm:text-xl tracking-wide truncate">
-              Zahoor Al Banafssaj
+            <span className="font-display text-sm sm:text-xl tracking-wide truncate">
+              <span className="hidden sm:inline">Zahoor Al Banafssaj</span>
+              <span className="sm:hidden">Zahoor</span>
             </span>
           </Link>
-          <div className="flex shrink-0 items-center gap-2 sm:gap-3">
+          <div className="flex shrink-0 items-center gap-1.5 sm:gap-3">
             <LangToggle />
-            <InstagramTrigger className="rounded-full border border-primary/40 bg-card/40 px-3 sm:px-4 py-2 text-xs sm:text-sm backdrop-blur-md hover:bg-primary hover:text-primary-foreground transition-all">
+            <InstagramTrigger className="rounded-full border border-primary/40 bg-card/40 px-2.5 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm backdrop-blur-md hover:bg-primary hover:text-primary-foreground transition-all">
               <span className="hidden sm:inline">{t("Instagram", "إنستغرام")}</span>
               <span className="sm:hidden">IG</span>
             </InstagramTrigger>
-            <Link to="/" className="hidden sm:inline text-sm text-muted-foreground hover:text-primary">
-              {isAr ? "العودة →" : "← Return"}
+            <Link
+              to="/"
+              className="rounded-full border border-primary/40 bg-card/40 px-2.5 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm backdrop-blur-md hover:bg-primary hover:text-primary-foreground transition-all"
+            >
+              {isAr ? "← رجوع" : "← Return"}
             </Link>
           </div>
+
         </nav>
 
       </header>
