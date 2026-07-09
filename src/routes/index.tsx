@@ -90,17 +90,18 @@ function Index() {
               <li><a href="#atelier" className="hover:text-primary transition-colors">{t("Our Artists", "فنانونا")}</a></li>
             </ul>
             <div className="flex shrink-0 items-center gap-1 sm:gap-3">
-              <Link to="/services" className="md:hidden rounded-full border border-primary/40 bg-card/40 px-2 py-1 text-[10px] backdrop-blur-md hover:bg-primary hover:text-primary-foreground transition-all">
+              <Link to="/services" className="md:hidden rounded-full border border-primary/40 bg-card/40 px-2.5 py-1.5 text-[11px] backdrop-blur-md hover:bg-primary hover:text-primary-foreground transition-all">
                 {t("Prices", "الأسعار")}
               </Link>
-              <a href="#atelier" className="md:hidden rounded-full border border-primary/40 bg-card/40 px-2 py-1 text-[10px] backdrop-blur-md hover:bg-primary hover:text-primary-foreground transition-all">
+              <a href="#atelier" className="md:hidden rounded-full border border-primary/40 bg-card/40 px-2.5 py-1.5 text-[11px] backdrop-blur-md hover:bg-primary hover:text-primary-foreground transition-all">
                 {t("Artists", "الفنانون")}
               </a>
-              <LangToggle className="!px-2 !py-1 !text-[10px] sm:!px-4 sm:!py-2 sm:!text-sm" />
-              <InstagramTrigger className="rounded-full border border-primary/40 bg-card/40 px-2 sm:px-5 py-1 sm:py-2 text-[10px] sm:text-sm backdrop-blur-md hover:bg-primary hover:text-primary-foreground transition-all">
+              <LangToggle className="!px-2.5 !py-1.5 !text-[11px] sm:!px-4 sm:!py-2 sm:!text-sm" />
+              <InstagramTrigger className="rounded-full border border-primary/40 bg-card/40 px-2.5 sm:px-5 py-1.5 sm:py-2 text-[11px] sm:text-sm backdrop-blur-md hover:bg-primary hover:text-primary-foreground transition-all">
                 <span className="hidden sm:inline">{t("Instagram", "إنستغرام")}</span>
                 <span className="sm:hidden">IG</span>
               </InstagramTrigger>
+
             </div>
 
           </nav>
