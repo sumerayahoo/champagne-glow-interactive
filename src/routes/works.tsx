@@ -42,10 +42,8 @@ function WorksPage() {
               alt="Zahoor Al Banafssaj"
               className="h-9 w-9 sm:h-12 sm:w-12 shrink-0 rounded-full object-cover shadow-[var(--shadow-rose)]"
             />
-            <span className="font-display text-sm sm:text-xl tracking-wide truncate">
-              <span className="hidden sm:inline">Zahoor Al Banafssaj</span>
-              <span className="sm:hidden">Zahoor</span>
-            </span>
+            <span className="font-display text-sm sm:text-xl tracking-wide truncate">Zahoor Al Banafssaj</span>
+
           </Link>
           <div className="flex shrink-0 items-center gap-1.5 sm:gap-3">
             <LangToggle />
