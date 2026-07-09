@@ -66,11 +66,14 @@ function Index() {
       {/* NAV — overlay bar over hero carousel (Mukadam-style) */}
       <header className="relative z-20">
         <div className="bg-background/85 backdrop-blur-md border-b border-primary/15">
-          <nav className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 py-3 sm:py-4">
+          <nav className="mx-auto flex max-w-7xl items-center justify-between gap-2 px-3 sm:px-6 py-2.5 sm:py-4">
             <a href="#" className="flex min-w-0 items-center gap-2 sm:gap-3">
-              <img src={logoAsset.url} alt="Zahoor Al Banafssaj" width={56} height={56} className="h-10 w-10 sm:h-14 sm:w-14 shrink-0 rounded-full object-cover shadow-[var(--shadow-rose)]" />
+              <img src={logoAsset.url} alt="Zahoor Al Banafssaj" width={56} height={56} className="h-9 w-9 sm:h-14 sm:w-14 shrink-0 rounded-full object-cover shadow-[var(--shadow-rose)]" />
               <span className="flex min-w-0 flex-col leading-tight">
-                <span className="font-display text-base sm:text-xl md:text-2xl tracking-wide truncate">Zahoor Al Banafssaj</span>
+                <span className="font-display text-sm sm:text-xl md:text-2xl tracking-wide truncate">
+                  <span className="hidden xs:inline sm:inline">Zahoor Al Banafssaj</span>
+                  <span className="xs:hidden sm:hidden">Zahoor</span>
+                </span>
                 <span className="hidden sm:inline text-[10px] uppercase tracking-[0.3em] text-primary">{t("Beauty Maison", "صالون الجمال")}</span>
               </span>
             </a>
@@ -86,19 +89,20 @@ function Index() {
               <li><Link to="/services" className="hover:text-primary transition-colors">{t("Prices", "الأسعار")}</Link></li>
               <li><a href="#atelier" className="hover:text-primary transition-colors">{t("Our Artists", "فنانونا")}</a></li>
             </ul>
-            <div className="flex shrink-0 items-center gap-2 sm:gap-3">
-              <Link to="/services" className="md:hidden rounded-full border border-primary/40 bg-card/40 px-3 py-2 text-xs backdrop-blur-md hover:bg-primary hover:text-primary-foreground transition-all">
+            <div className="flex shrink-0 items-center gap-1 sm:gap-3">
+              <Link to="/services" className="md:hidden rounded-full border border-primary/40 bg-card/40 px-2 py-1 text-[10px] backdrop-blur-md hover:bg-primary hover:text-primary-foreground transition-all">
                 {t("Prices", "الأسعار")}
               </Link>
-              <a href="#atelier" className="md:hidden rounded-full border border-primary/40 bg-card/40 px-3 py-2 text-xs backdrop-blur-md hover:bg-primary hover:text-primary-foreground transition-all">
+              <a href="#atelier" className="md:hidden rounded-full border border-primary/40 bg-card/40 px-2 py-1 text-[10px] backdrop-blur-md hover:bg-primary hover:text-primary-foreground transition-all">
                 {t("Artists", "الفنانون")}
               </a>
-              <LangToggle />
-              <InstagramTrigger className="rounded-full border border-primary/40 bg-card/40 px-3 sm:px-5 py-2 text-xs sm:text-sm backdrop-blur-md hover:bg-primary hover:text-primary-foreground transition-all">
+              <LangToggle className="!px-2 !py-1 !text-[10px] sm:!px-4 sm:!py-2 sm:!text-sm" />
+              <InstagramTrigger className="rounded-full border border-primary/40 bg-card/40 px-2 sm:px-5 py-1 sm:py-2 text-[10px] sm:text-sm backdrop-blur-md hover:bg-primary hover:text-primary-foreground transition-all">
                 <span className="hidden sm:inline">{t("Instagram", "إنستغرام")}</span>
                 <span className="sm:hidden">IG</span>
               </InstagramTrigger>
             </div>
+
           </nav>
 
         </div>
